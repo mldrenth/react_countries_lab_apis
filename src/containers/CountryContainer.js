@@ -3,6 +3,7 @@ import WorldPopulation from "../components/WorldPopulation";
 import CountrySelector from "../components/CountrySelector";
 import CountryDetails from "../components/CountryDetail";
 import FavouriteCountriesList from "../components/FavouriteCountriesList";
+import './CountryContainer.css'
 
 const CountryContainer = () => {
     
@@ -37,15 +38,16 @@ const CountryContainer = () => {
 
     return(
 
-        <>
-            
+        <div id="main-container">
+            <div id="country-div">
             {countries ? <WorldPopulation countries={countries}/>
             : null}
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
             {selectedCountry ?<CountryDetails country={selectedCountry} onFavouriteCountrySelected={onFavouriteCountrySelected} />: null}
+            </div>
             {favouriteCountries ? <FavouriteCountriesList favouriteCountries={favouriteCountries} />
             : null}
-        </>
+        </div>
     )
 }
 

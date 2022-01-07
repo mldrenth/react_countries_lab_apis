@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  background: #d41baf;
+  background-image: -webkit-linear-gradient(top, #d41baf, #b82b6f);
+  background-image: -moz-linear-gradient(top, #d41baf, #b82b6f);
+  background-image: -ms-linear-gradient(top, #d41baf, #b82b6f);
+  background-image: -o-linear-gradient(top, #d41baf, #b82b6f);
+  background-image: linear-gradient(to bottom, #d41baf, #b82b6f);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #a81b98;
+  -moz-box-shadow: 0px 1px 3px #a81b98;
+  box-shadow: 0px 1px 3px #a81b98;
+  font-family: Arial;
+  color: #fafafa;
+  font-size: 21px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #db2c43;
+  background-image: -webkit-linear-gradient(top, #db2c43, #8a111b);
+  background-image: -moz-linear-gradient(top, #db2c43, #8a111b);
+  background-image: -ms-linear-gradient(top, #db2c43, #8a111b);
+  background-image: -o-linear-gradient(top, #db2c43, #8a111b);
+  background-image: linear-gradient(to bottom, #db2c43, #8a111b);
+  text-decoration: none;
 }

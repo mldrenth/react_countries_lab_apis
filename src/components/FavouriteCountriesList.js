@@ -8,11 +8,12 @@ const FavouriteCountriesList = ({favouriteCountries}) => {
     })
 
     return(
-        <>
+        <div id="favourites-div">
+            <h3>My Favourite Countries:</h3>
             <ul>
                 {countryItems}
             </ul>
-        </>
+        </div>
     )
     
 }
