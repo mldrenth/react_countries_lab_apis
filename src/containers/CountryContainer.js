@@ -9,6 +9,7 @@ const CountryContainer = () => {
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null)
     const [favouriteCountries, setFavouriteCountries] = useState([])
+    const [borderCountries, setBorderCountries] = useState([])
 
 
     useEffect(() => {
@@ -23,6 +24,7 @@ const CountryContainer = () => {
 
     const onCountrySelected = (country) => {
         setSelectedCountry(country)
+        
     }
 
     

@@ -6,6 +6,8 @@ const CountrySelector = ({countries, onCountrySelected}) => {
         onCountrySelected(chosenCountry)        
     }
 
+    
+    
     const countryOptions = countries.map((country,index) => {
         return <option value={index} key={index} >{country.name.common}</option>
         
