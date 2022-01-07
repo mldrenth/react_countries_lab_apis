@@ -2,7 +2,7 @@ import React from 'react';
 
 const CountryDetails = ({country, onFavouriteCountrySelected}) => {
     
-    const handleClick = (country) => {
+    const handleClick = () => {
         onFavouriteCountrySelected(country)
     }
 
