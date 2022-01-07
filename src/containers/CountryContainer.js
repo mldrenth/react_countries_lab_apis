@@ -27,8 +27,10 @@ const CountryContainer = () => {
 
     
     const onFavouriteCountrySelected = (favouriteCountry) => {
-        // setMyArray(oldArray => [...oldArray, newElement]);
-        setFavouriteCountries([...favouriteCountries, favouriteCountry])
+        if (!favouriteCountries.includes(favouriteCountry)) {
+            setFavouriteCountries([...favouriteCountries, favouriteCountry])
+        }
+
     }
 
     return(
