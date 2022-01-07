@@ -23,8 +23,9 @@ const CountryContainer = () => {
         .then(countries => setCountries(countries))
     }
 
-    const onCountrySelected = (country) => {
+    const onCountrySelected = (country, newBorderCountries) => {
         setSelectedCountry(country)
+        setBorderCountries(newBorderCountries)
         
     }
 
@@ -43,7 +44,7 @@ const CountryContainer = () => {
             {countries ? <WorldPopulation countries={countries}/>
             : null}
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
-            {selectedCountry ?<CountryDetails country={selectedCountry} onFavouriteCountrySelected={onFavouriteCountrySelected} />: null}
+            {selectedCountry ?<CountryDetails country={selectedCountry} borderCountries={borderCountries} onFavouriteCountrySelected={onFavouriteCountrySelected} />: null}
             </div>
             {favouriteCountries ? <FavouriteCountriesList favouriteCountries={favouriteCountries} />
             : null}

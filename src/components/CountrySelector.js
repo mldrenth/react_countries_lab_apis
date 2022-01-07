@@ -3,7 +3,12 @@ import React from 'react';
 const CountrySelector = ({countries, onCountrySelected}) => {
     const handleChange = (event) => {
         const chosenCountry = countries[event.target.value];
-        onCountrySelected(chosenCountry)        
+        const borderingCountriesShort = chosenCountry.borders
+        let borderCountries = []
+        if (borderingCountriesShort) {
+        borderCountries = countries.filter(country => borderingCountriesShort.includes(country["cca3"]))
+    }
+        onCountrySelected(chosenCountry, borderCountries)        
     }
 
     
