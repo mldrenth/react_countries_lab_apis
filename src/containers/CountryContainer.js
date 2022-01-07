@@ -2,11 +2,14 @@ import React, {useState, useEffect} from "react";
 import WorldPopulation from "../components/WorldPopulation";
 import CountrySelector from "../components/CountrySelector";
 import CountryDetails from "../components/CountryDetail";
+import FavouriteCountriesList from "../components/FavouriteCountriesList";
 
 const CountryContainer = () => {
     
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null)
+    const [favouriteCountries, setFavouriteCountries] = useState([])
+
 
     useEffect(() => {
         getCountries();
@@ -22,6 +25,12 @@ const CountryContainer = () => {
         setSelectedCountry(country)
     }
 
+    
+    const onFavouriteCountrySelected = (favouriteCountry) => {
+        
+        const newListOfFavourites = favouriteCountries.push(favouriteCountry)
+        setFavouriteCountries(newListOfFavourites)
+    }
 
     return(
 
@@ -30,8 +39,9 @@ const CountryContainer = () => {
             {countries ? <WorldPopulation countries={countries}/>
             : null}
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
-            {selectedCountry ?<CountryDetails country={selectedCountry} />: null}
-            {/* <FavouriteCountries /> */}
+            {selectedCountry ?<CountryDetails country={selectedCountry} onFavouriteCountrySelected={onFavouriteCountrySelected} />: null}
+            {favouriteCountries ? <FavouriteCountriesList favouriteCountries={favouriteCountries} />
+            : null}
         </>
     )
 }
